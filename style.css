@@ -1,6 +1,10 @@
+:root {
+    --main-radius: 5px;
+    --main-padding: 5px;
+}
+
 body {
     font-family: Arial, sans-serif;
-    margin: 0;
     background-color: #f4f4f4;
 }
 
@@ -8,94 +12,242 @@ html {
     scroll-behavior: smooth;
 }
 
-.navbar {
-    overflow: hidden;         
+.container {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1.2fr;
+    grid-template-areas: 
+        "nav nav nav"
+        "main main main"
+        "education education education"
+        "projects projects projects"
+        "experience experience experience"
+        "blogs blogs blogs"
+        "footer footer footer";
+    height: 100vh;
+    background-color: #f4f4f4;
+    gap: 0.5rem;
+}
+
+nav {
     background-color: #2F4F4F; 
-    white-space: nowrap; 
+    grid-area: nav;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr; 
+    white-space: nowrap;
 }
 
-.navbar a {
-    display: inline-block;
-    width: 20%; 
-    color: #FFFFFF;          
-    text-align: center;      
-    padding: 14px; 
-    text-decoration: none;
-    line-height: 1.5;
-    box-sizing: border-box;
+nav a {
+    color: #FFFFFF; 
+    text-align: center; 
+    padding: 10px; 
+    text-decoration: none; 
+    line-height: 1.5; 
+    box-sizing: border-box; 
 }
 
-.navbar a:hover {
+nav a:hover {
     background-color: #FF6F61; 
     color: black;
 }
 
-.box {
-    float: left; 
-    width: 33%; 
-    height: 200px;
-    text-align: center; 
-    box-sizing: border-box; 
+main {
+    grid-area: main;
+    padding: var(--main-padding);
+    border-radius: var(--main-radius);
 }
 
-.box1 {
-    float: left; 
-    width: 28%; 
-    height: auto;
-    text-align: left; 
-    padding: 20px; 
-    background-color: #FFFFFF; 
-    border-radius: 8px; 
-    margin: 1%; 
+.about-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    align-items: center; 
+    gap: 10px; 
 }
 
-.box img {
+.about-container img {
     width: 70%; 
     margin-top: 20px; 
+    padding-left: 70px;
+    padding-right: 70px;
     border-radius: 50%;
+    justify-self: center; 
 }
 
-h1 {
+.about-img p{
+  text-align: center;
+}
+
+.about-text {
+    background-color: #FFFFFF; 
+    height: 90%;
+    color: #333; 
+    padding: 10px; 
+}
+
+.about-text h1 {
     font-size: 36px; 
     margin: 20px 0; 
     padding-bottom: 10px; 
     border-bottom: 5px solid black;
 }
 
-p {
-    font-size: 16px; 
-    line-height: 1.6; 
+.about-text p {
+    margin: 10px 0px;
+}
+
+#education{
+    grid-area: education;
+    background-color: #f4f4f4;
+    padding: var(--main-padding);
+    border-radius: var(--main-radius);
+}
+
+.education-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    align-items: center; 
+    gap: 10px; 
+}
+
+.education-container img {
+    width: 70%; 
+    margin-top: 20px; 
+    padding-left: 70px;
+    padding-right: 70px;
+    border-radius: 50%;
+    justify-self: center; 
+}
+
+.education-img p{
+  text-align: center;
+}
+
+.education-text {
+    background-color: #FFFFFF; 
+    height: 90%;
     color: #333; 
+    padding: 10px; 
+}
+
+.education-text h1 {
+    font-size: 36px; 
+    margin: 20px 0; 
+    padding-bottom: 10px; 
+    border-bottom: 5px solid black;
+}
+
+.education-text p {
     margin: 10px 0;
 }
 
-#education {
-    margin-top: 500px; 
+#projects{
+    grid-area: projects;
+    background-color: #f4f4f4;
+    padding: var(--main-padding);
+    border-radius: var(--main-radius);
 }
 
-#projects {
-    margin-top: 1000px; 
+.projects-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    align-items: center; 
+    gap: 10px; 
 }
 
-#experience {
-    margin-top: 1400px; 
+.projects-text {
+    background-color: #FFFFFF; 
+    height: 90%;
+    color: #333; 
+    padding: 10px; 
 }
 
-#blogs {
-    margin-top: 1800px; 
+.projects-text h1 {
+    font-size: 36px; 
+    margin: 20px 0; 
+    padding-bottom: 10px; 
+    border-bottom: 5px solid black;
 }
 
-.footer {
-    background-color: #2C3E50; 
-    padding: 55px 0;
-    text-align: center;
-    margin-top: 2450px; 
+.projects-text p {
+    margin: 10px 0;
 }
 
-p1 {
-    display: block;
+#experience{
+    grid-area: experience;
+    background-color: #f4f4f4;
+    padding: var(--main-padding);
+    border-radius: var(--main-radius);
+}
+
+.experience-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    align-items: center; 
+    gap: 10px; 
+}
+
+.experience-text {
+    background-color: #FFFFFF; 
+    height: 90%;
+    color: #333; 
+    padding: 10px; 
+}
+
+.experience-text h1 {
+    font-size: 36px; 
+    margin: 20px 0; 
+    padding-bottom: 10px; 
+    border-bottom: 5px solid black;
+}
+
+.experience-text p {
+    margin: 10px 0;
+}
+
+#blogs{
+    grid-area: blogs;
+    background-color: #f4f4f4;
+    padding: var(--main-padding);
+    border-radius: var(--main-radius);
+}
+
+.blogs-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    align-items: center; 
+    gap: 10px; 
+}
+
+.blogs-text {
+    background-color: #FFFFFF; 
+    height: 90%;
+    color: #333; 
+    padding: 10px; 
+}
+
+.blogs-text h1 {
+    font-size: 36px; 
+    margin: 20px 0; 
+    padding-bottom: 10px; 
+    border-bottom: 5px solid black;
+}
+
+.blogs-text p {
+    margin: 10px 0;
+}
+
+footer {
+    background-color: #2C3E50;
+    grid-area: footer; 
+    text-align: center; 
+    padding: var(--main-padding); 
+    border-radius: var(--main-radius); 
+}
+
+footer p { 
+    display: block; 
     font-size: 16px; 
     line-height: 1.6; 
-    color:#ECF0F1; 
-    margin: 10px 0;
+    color: #ECF0F1; 
+    margin: 10px 0; 
 }
